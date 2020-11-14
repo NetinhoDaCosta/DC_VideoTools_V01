@@ -17,12 +17,25 @@ class Mainwindow(qtw.QMainWindow):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.select_btn.clicked.connect(self.loop_video)
 
-        # my code ends ere
+
+
+
+
+        # my ui code ends ere
 
         self.show()
     def callback(self):
         print("hello there")
+
+    def loop_video(self):
+        print("ok")
+        fname = qtw.QFileDialog.getOpenFileName(self, 'Open file',
+         'c:\\',"Video Files (*.mp4 *.flv *.ts *.mts *.avi)")
+        videoname_url = str(fname[0])
+        self.ui.label_videoname.setText(videoname_url)
+
 
 
 
@@ -30,7 +43,7 @@ if __name__ == "__main__":
     app = qtw.QApplication(sys.argv)
 
     w = Mainwindow()
-    
+
     qtmodern.styles.dark(app)
     mw = qtmodern.windows.ModernWindow(w)
     mw.show()

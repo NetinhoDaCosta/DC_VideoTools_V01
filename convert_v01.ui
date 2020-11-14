@@ -53,7 +53,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_videoname">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -100,7 +100,7 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QPushButton" name="create_sequence_btn">
+            <widget class="QPushButton" name="sequence_btn">
              <property name="minimumSize">
               <size>
                <width>45</width>
@@ -118,7 +118,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>N:/Downloads/gallery.svg</normaloff>N:/Downloads/gallery.svg</iconset>
+               <normaloff>img/gallery.svg</normaloff>img/gallery.svg</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -186,7 +186,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/scissors.svg</normaloff>N:/Downloads/scissors.svg</iconset>
+           <normaloff>img/scissors.svg</normaloff>img/scissors.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -235,7 +235,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="groupBox_extract_audio">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -247,7 +247,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_9">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="audio_btn">
          <property name="minimumSize">
           <size>
            <width>45</width>
@@ -265,7 +265,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/add.svg</normaloff>N:/Downloads/add.svg</iconset>
+           <normaloff>img/add.svg</normaloff>img/add.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -278,7 +278,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="radioButton_mp3">
            <property name="maximumSize">
             <size>
              <width>100</width>
@@ -291,7 +291,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="radioButton__wav">
            <property name="text">
             <string>WAV</string>
            </property>
@@ -303,7 +303,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="groupBox_extract_srt">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -315,7 +315,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_12">
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="srt_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -339,7 +339,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/video-conference.svg</normaloff>N:/Downloads/video-conference.svg</iconset>
+           <normaloff>img/video-conference.svg</normaloff>img/video-conference.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -364,7 +364,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_3">
+     <widget class="QGroupBox" name="groupBox_convert_codec">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -376,7 +376,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_13">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="convert_codec_btn">
          <property name="minimumSize">
           <size>
            <width>45</width>
@@ -394,7 +394,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/video.svg</normaloff>N:/Downloads/video.svg</iconset>
+           <normaloff>img/video.svg</normaloff>img/video.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -429,7 +429,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="comboBox_codecs">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -459,7 +459,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_4">
+     <widget class="QGroupBox" name="groupBox_extract_snippet">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -471,7 +471,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_14">
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="snippet_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -495,7 +495,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/video-editing.svg</normaloff>N:/Downloads/video-editing.svg</iconset>
+           <normaloff>img/video-editing.svg</normaloff>img/video-editing.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -521,7 +521,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="lineEdit_startframe"/>
          </item>
          <item>
           <widget class="QLabel" name="label_5">
@@ -537,7 +537,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="lineEdit_duration"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_18"/>
@@ -548,7 +548,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_5">
+     <widget class="QGroupBox" name="groupBox_loop_video">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -566,7 +566,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="loop_btn">
          <property name="minimumSize">
           <size>
            <width>45</width>
@@ -579,12 +579,15 @@
            <height>45</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>N:/Downloads/rotation.svg</normaloff>N:/Downloads/rotation.svg</iconset>
+           <normaloff>img/rotation.svg</normaloff>img/rotation.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -610,7 +613,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="lineEdit_loops"/>
          </item>
         </layout>
        </item>
@@ -632,7 +635,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QListView" name="listView"/>
+     <widget class="QListView" name="listView_data"/>
     </item>
    </layout>
   </widget>
