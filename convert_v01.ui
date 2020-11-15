@@ -635,7 +635,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QListView" name="listView_data"/>
+     <widget class="QTextEdit" name="textEdit_data"/>
     </item>
    </layout>
   </widget>
