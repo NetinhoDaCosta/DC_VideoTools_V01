@@ -22,10 +22,6 @@ class Mainwindow(qtw.QMainWindow):
         self.ui.setupUi(self)
         self.ui.select_btn.clicked.connect(self.loop_video)
 
-
-
-
-
         # my ui code ends ere
 
         self.show()
@@ -42,7 +38,7 @@ class Mainwindow(qtw.QMainWindow):
         data_list =[]
         media_info = MediaInfo.parse(videoname_url)
         for track in media_info.tracks:
-            
+
             if track.track_type == "Video":
                 print("Bit rate: {t.bit_rate}, Frame rate: {t.frame_rate}, "
                     "Format: {t.format}".format(t=track)
@@ -55,7 +51,7 @@ class Mainwindow(qtw.QMainWindow):
                 self.ui.textEdit_data.append("Duration (raw value):" +  str(track.duration) + '\n')
                 self.ui.textEdit_data.append("Duration (other values:")
                 #self.ui.textEdit_data.setText(self.ui.textEdit_data.text() + str(track ))
-                
+
 
             elif track.track_type == "Audio":
                 print("Track data:")
