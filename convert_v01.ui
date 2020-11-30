@@ -54,7 +54,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>img/redrum_beeldmerk_280-280.png</pixmap>
+       <pixmap>../../System_crawl_sequence_size_v01/System_crawl_sequence_size/red_logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -171,6 +171,9 @@
                <height>45</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -238,6 +241,9 @@
            <width>45</width>
            <height>45</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string/>
@@ -318,6 +324,9 @@
            <height>45</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -346,10 +355,13 @@
            <property name="text">
             <string>MP3</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton__wav">
+          <widget class="QRadioButton" name="radioButton_wav">
            <property name="text">
             <string>WAV</string>
            </property>
@@ -391,6 +403,9 @@
            <width>45</width>
            <height>45</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string/>
@@ -446,6 +461,9 @@
            <width>45</width>
            <height>45</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string/>
@@ -547,6 +565,9 @@
            <width>45</width>
            <height>45</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <property name="text">
           <string/>

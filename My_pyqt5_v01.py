@@ -53,10 +53,15 @@ class Mainwindow(qtw.QMainWindow):
                 #self.ui.textEdit_data.setText(self.ui.textEdit_data.text() + str(track ))
 
 
+
+
             elif track.track_type == "Audio":
                 print("Track data:")
                 pprint(track.to_data())
-                self.ui.textEdit_data.append("Track data:" + str(track.to_data()))
+                data_dict = track.to_data()
+                for key in data_dict:
+                  print(key)
+
 
 
 
@@ -66,7 +71,6 @@ class Mainwindow(qtw.QMainWindow):
 
 if __name__ == "__main__":
     app = qtw.QApplication(sys.argv)
-
     w = Mainwindow()
 
     qtmodern.styles.dark(app)
