@@ -24,6 +24,7 @@ class Mainwindow(qtw.QMainWindow):
         self.ui.setupUi(self)
         self.ui.select_btn.clicked.connect(self.show_data)
         self.ui.audio_btn.clicked.connect(self.cut_audio)
+        self.ui.sequence_btn.clicked.connect(self.convert_to_images)
 
         # my ui code ends ere
 
@@ -59,7 +60,41 @@ class Mainwindow(qtw.QMainWindow):
         pass
 
     def convert_to_images(self):
-        pass
+
+        #get video file url
+        file_url = self.ui.label_videoname.text()
+        out_filename = str(file_url) + "image"
+        out_filename2 = "test.mp4"
+        print(file_url)
+        
+        split_url= file_url.split("/")
+        kale_filename = split_url.pop(-1)
+        kale_url = "/".join(split_url)
+        print(kale_url)
+        image_filename = kale_filename[:-4]
+        print(image_filename)
+        
+        desired_image_extention = ".jpg"
+        if self.ui.radioButton_jpg.isChecked():
+            desired_image_extention = ".jpg"
+            print
+        elif self.ui.radioButton_png.isChecked():
+            desired_image_extention = ".png"
+
+        image_output = str(kale_url) + "/" + str(image_filename) + str(desired_image_extention)
+        image_output_file = str(kale_url) + "/" + str(image_filename)
+        print(image_output)
+
+        #screenshot_frames is inulveld van gewenste frames
+        (
+            ffmpeg
+            .input(file_url)
+            # .filter('scale', 1920, -1)
+            #.output(image_output, vframes=1)
+            .output("{}-%03d{}".format(image_output_file,desired_image_extention))
+            .run()
+        )
+
 
     def generate_screenstots(self):
         pass
@@ -115,9 +150,9 @@ class Mainwindow(qtw.QMainWindow):
         for key, value in video_stream2.items():
             print(key, " : ", value )
             file_data = str(key) +  " : " + str(value)
-            
+
             self.ui.textEdit_data.append(str(file_data))
-        
+
         # for stream_item in enumerate(video_stream2):
         #     print(video_stream2[stream_item])
 
@@ -128,7 +163,7 @@ class Mainwindow(qtw.QMainWindow):
 
             # for my_data_y in probe[my_data_x]:
             #     print(   my_data_y,":", probe[my_data_x][my_data_y])
-            
+
 
 
 
