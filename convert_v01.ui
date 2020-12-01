@@ -200,6 +200,9 @@
              <property name="text">
               <string>JPG sequence</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -514,17 +517,132 @@
            </property>
            <item>
             <property name="text">
-             <string>mp4</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>mov</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
              <string>avi</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>dnxhd</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>flv1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>h261</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>h262</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>h264</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hap</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hvec</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mpeg1video</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mpeg2video</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>prores</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rv10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rv20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rv30</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rv40</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sanm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp6a</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp6f</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vp9</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>wcmv</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ylc</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>yuv4</string>
             </property>
            </item>
           </widget>

@@ -25,12 +25,15 @@ class Mainwindow(qtw.QMainWindow):
         self.ui.select_btn.clicked.connect(self.show_data)
         self.ui.audio_btn.clicked.connect(self.cut_audio)
         self.ui.sequence_btn.clicked.connect(self.convert_to_images)
+        self.ui.screenshots_btn.clicked.connect(self.generate_screenstots)
+        self.ui.convert_codec_btn.clicked.connect(self.convert_codec)
+        self.ui.convert_codec_btn.clicked.connect(self.convert_codec)
 
         # my ui code ends ere
 
         self.show()
     def callback(self):
-        print("hello there")
+        print("test")
 
     def cut_audio(self):
         video_name = self.ui.label_videoname.text()
@@ -64,16 +67,15 @@ class Mainwindow(qtw.QMainWindow):
         #get video file url
         file_url = self.ui.label_videoname.text()
         out_filename = str(file_url) + "image"
-        out_filename2 = "test.mp4"
         print(file_url)
-        
+
         split_url= file_url.split("/")
         kale_filename = split_url.pop(-1)
         kale_url = "/".join(split_url)
         print(kale_url)
         image_filename = kale_filename[:-4]
         print(image_filename)
-        
+
         desired_image_extention = ".jpg"
         if self.ui.radioButton_jpg.isChecked():
             desired_image_extention = ".jpg"
@@ -85,7 +87,6 @@ class Mainwindow(qtw.QMainWindow):
         image_output_file = str(kale_url) + "/" + str(image_filename)
         print(image_output)
 
-        #screenshot_frames is inulveld van gewenste frames
         (
             ffmpeg
             .input(file_url)
@@ -97,10 +98,73 @@ class Mainwindow(qtw.QMainWindow):
 
 
     def generate_screenstots(self):
+
+        #screenshot_frames is inulveld van gewenste frames
+        file_url = self.ui.screenshot_frames.text()
+        print(file_url)
+
+        screenshot_input_list = file_url.split(",")
+        print(screenshot_input_list)
+
+        file_url = self.ui.label_videoname.text()
+        out_filename = str(file_url) + "image"
+        print(file_url)
+
+        split_url= file_url.split("/")
+        kale_filename = split_url.pop(-1)
+        kale_url = "/".join(split_url)
+        print(kale_url)
+        image_filename = kale_filename[:-4]
+        print(image_filename)
+
+        desired_image_extention = ".jpg"
+        image_output = str(kale_url) + "/" + str(image_filename) + str(desired_image_extention)
+        image_output_file = str(kale_url) + "/" + str(image_filename)
+
+        screenshot = "_screenshot"
+        image_output_file_sub = image_output_file + screenshot
+        for screenshot_index, screenshot in enumerate(screenshot_input_list):
+            print(screenshot)
+
+            (
+            ffmpeg
+            .input(file_url)
+            # .filter('scale', 1920, -1)
+            .output("{}_{}_{}".format(image_output_file_sub, screenshot_index, desired_image_extention), vframes=1)
+            .run()
+            )
+
+
         pass
 
     def convert_codec(self):
-        pass
+
+        file_url = self.ui.label_videoname.text()
+        out_filename = str(file_url) + "image"
+        print(file_url)
+
+        split_url= file_url.split("/")
+        kale_filename = split_url.pop(-1)
+        kale_url = "/".join(split_url)
+        print(kale_url)
+        image_filename = kale_filename[:-4]
+        print(image_filename)
+
+        codec_waarde = self.ui.comboBox_codecs.currentText()
+        print(codec_waarde)
+        if codec_waarde == "avi":
+            desired_extention = ".avi"
+
+        image_output = str(kale_url) + "/" + str(image_filename) + str(desired_extention)
+
+
+        (
+            ffmpeg
+            .input(file_url)
+            .output(image_output)
+            .run()
+        )
+
 
     def exact_size(self):
         pass
