@@ -28,6 +28,7 @@ class Mainwindow(qtw.QMainWindow):
         self.ui.screenshots_btn.clicked.connect(self.generate_screenstots)
         self.ui.convert_codec_btn.clicked.connect(self.convert_codec)
         self.ui.convert_codec_btn.clicked.connect(self.convert_codec)
+        self.ui.srt_btn.clicked.connect(self.extract_srt)
 
         # my ui code ends ere
 
@@ -60,7 +61,33 @@ class Mainwindow(qtw.QMainWindow):
         pass
 
     def extract_srt(self):
-        pass
+        #get video file url
+        file_url = self.ui.label_videoname.text()
+        out_filename = str(file_url) + "image"
+        print(file_url)
+
+        split_url= file_url.split("/")
+        kale_filename = split_url.pop(-1)
+        kale_url = "/".join(split_url)
+        print(kale_url)
+        image_filename = kale_filename[:-4]
+        print(image_filename)
+
+        desired_image_extention = ".srt"
+
+        image_output = str(kale_url) + "/" + str(image_filename) + str(desired_image_extention)
+        image_output_file = str(kale_url) + "/" + str(image_filename)
+        print(image_output)
+
+        (
+            ffmpeg
+            .input(file_url)
+            # .filter('scale', 1920, -1)
+            #.output(image_output, vframes=1)
+            .output("{}{}".format(image_output_file,desired_image_extention))
+            .run()
+        )
+
 
     def convert_to_images(self):
 
@@ -158,9 +185,16 @@ class Mainwindow(qtw.QMainWindow):
         image_output = str(kale_url) + "/" + str(image_filename) + str(desired_extention)
 
 
+        # ffmpeg -i Movie.mkv -map 0:s:0 subs.srt
+        # -i: Input file URL/path.
+        # -map: Designate one or more input streams as a source for the output file.
+        # s:0: Select the subtitle stream.
+
         (
             ffmpeg
             .input(file_url)
+            .filter('map', map=0)
+            .filter('s',s=0)
             .output(image_output)
             .run()
         )
@@ -172,7 +206,7 @@ class Mainwindow(qtw.QMainWindow):
     def show_data(self):
         print("ok")
         fname = qtw.QFileDialog.getOpenFileName(self, 'Open file',
-         'c:\\',"Video Files (*.mp4 *.flv *.ts *.mts *.avi)")
+         'c:\\',"Video Files (*.mp4 *.flv *.ts *.mts *.avi *.mkv)")
         videoname_url = str(fname[0])
         self.ui.label_videoname.setText(videoname_url)
 
