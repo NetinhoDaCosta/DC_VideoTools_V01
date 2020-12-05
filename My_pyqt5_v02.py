@@ -30,7 +30,6 @@ class Mainwindow(qtw.QMainWindow):
         self.ui.convert_codec_btn.clicked.connect(self.convert_codec)
         self.ui.srt_btn.clicked.connect(self.extract_srt)
 
-        # my ui code ends ere
 
         self.show()
     def callback(self):
@@ -188,7 +187,7 @@ class Mainwindow(qtw.QMainWindow):
         # ffmpeg -i Movie.mkv -map 0:s:0 subs.srt
         # -i: Input file URL/path.
         # -map: Designate one or more input streams as a source for the output file.
-        # s:0: Select the subtitle stream.
+        # s:0: Select the subtitle stream. (gebruik filters)
 
         (
             ffmpeg
